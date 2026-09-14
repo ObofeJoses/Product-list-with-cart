@@ -20,7 +20,7 @@ function renderProducts() {
     const isSelected = quantity > 0;
 
     return `
-      <article class="product-card ${isSelected ? 'selected' : ''}">
+      <div class="product-card ${isSelected ? 'selected' : ''}">
         <div class="product-image-container">
           <picture>
             <source media="(min-width: 1024px)" srcset="${product.image.desktop}">
@@ -49,7 +49,7 @@ function renderProducts() {
         <span class="product-category">${product.category}</span>
         <h3 class="product-name">${product.name}</h3>
         <span class="product-price">$${product.price.toFixed(2)}</span>
-      </article>
+      </div>
     `;
   }).join('');
 }
