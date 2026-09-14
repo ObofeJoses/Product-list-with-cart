@@ -2,64 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./assets/css/styles.css">
-  
   <title>Frontend Mentor | Product list with cart</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 0.6875rem; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-    <div class="product-list">
-        <h1>Desserts</h1>
+  <main class="app-container">
+    <section class="products-section">
+      <h1 class="section-title">Desserts</h1>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
 
-        <div class="product-card">
-        <img src="./assets/images/waffle.jpg" alt="Waffle with Berries">
-        <h2>Waffle with Berries</h2>
-        <p class="product-type">Waffle</p>
-        <p class="product-price">$6.50</p>
-        <button class="add-to-cart">Add to Cart</button>
+    <aside class="cart-section" aria-label="Shopping Cart">
+      <h2 class="cart-title">Your Cart (<span id="cart-count">0</span>)</h2>
+      
+      <div class="cart-empty" id="cart-empty">
+        <img src="./assets/images/illustration-empty-cart.svg" alt="Empty cart illustration">
+        <p>Your added items will appear here</p>
+      </div>
+
+      <div class="cart-content hidden" id="cart-content">
+        <ul class="cart-items" id="cart-items"></ul>
+        <div class="cart-summary">
+          <span class="summary-label">Order Total</span>
+          <span class="summary-total" id="order-total">$0.00</span>
         </div>
-
-        <div class="product-card">
-        <img src="./assets/images/creme-brulee.jpg" alt="Vanilla Bean Crème Brûlée">
-        <h2>Vanilla Bean Crème Brûlée</h2>
-        <p class="product-type">Crème Brûlée</p>
-        <p class="product-price">$7.00</p>
-        <button class="add-to-cart">Add to Cart</button>
+        <div class="carbon-neutral-note">
+          <img src="./assets/images/icon-carbon-neutral.svg" alt="">
+          <p>This is a <strong>carbon-neutral</strong> delivery</p>
         </div>
+        <button class="btn btn-confirm" id="confirm-order-btn">Confirm Order</button>
+      </div>
+    </aside>
+  </main>
 
-        <div class="product-card">
-        <img src="./assets/images/macaron.jpg" alt="Macaron Mix of Five">
-        <h2>Macaron Mix of Five</h2>
-        <p class="product-type">Macaron</p>
-        <p class="product-price">$8.00</p>
-        <button class="add-to-cart">Add to Cart</button>
+  <div class="modal-backdrop hidden" id="modal-backdrop">
+    <div class="modal-card">
+      <img src="./assets/images/icon-order-confirmed.svg" alt="Order confirmed" class="modal-icon">
+      <h2 class="modal-title">Order Confirmed</h2>
+      <p class="modal-subtitle">We hope you enjoy your food!</p>
+      <div class="modal-order-summary">
+        <ul class="modal-items" id="modal-items"></ul>
+        <div class="modal-total-container">
+          <span>Order Total</span>
+          <strong class="modal-order-total" id="modal-order-total">$0.00</strong>
         </div>
-
-    <!-- Add more product cards as needed -->
+      </div>
+      <button class="btn btn-primary btn-full" id="start-new-order-btn">Start New Order</button>
     </div>
+  </div>
 
-    <div class="cart">
-        <h2>Your Cart <span>(<!-- Quantity -->)</span></h2>
-        <p class="cart-empty">Your added items will appear here</p>
-        <ul class="cart-items">
-        <!-- Cart items will be dynamically added here -->
-        </ul>
-        <p class="cart-total">Total: $0.00</p>
-        <button class="checkout">Checkout</button>
-    </div>
-
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </footer>
+  <script src="./assets/js/app.js" type="module"></script>
 </body>
 </html>

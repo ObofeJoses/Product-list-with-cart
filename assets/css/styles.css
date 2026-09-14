@@ -1,4 +1,4 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;600;700&display=swap");
 
 
 :root {
@@ -18,26 +18,6 @@
 	--font-weight-bold: 700;
 }
 
-@font-face {
-	font-family: "Red Hat Text";
-	font-style: normal;
-	font-weight: 400;
-	src: url("assets/fonts/static/RedHatText-Regular.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Red Hat Text";
-	font-style: normal;
-	font-weight: 600;
-	src: url("assets/fonts/static/RedHatText-SemiBold.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "Red Hat Text";
-	font-style: normal;
-	font-weight: 700;
-	src: url("assets/fonts/static/RedHatText-Bold.ttf") format("truetype");
-}
 
 /* Global reset and base styles */
 *,
