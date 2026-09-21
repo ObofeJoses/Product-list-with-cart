@@ -108,8 +108,6 @@ function updateCart() {
 
     attachCartEventListeners();
   }
-
-  renderProducts();
 }
 
 // Event Listeners: Product Grid
@@ -118,6 +116,7 @@ function attachProductEventListeners() {
     btn.onclick = (e) => {
       const idx = e.currentTarget.dataset.index;
       cart.push({ ...products[idx], quantity: 1 });
+      renderProducts();
       updateCart();
     };
   });
@@ -127,6 +126,7 @@ function attachProductEventListeners() {
       const idx = e.currentTarget.dataset.index;
       const cartItem = cart.find(item => item.name === products[idx].name);
       if (cartItem) cartItem.quantity++;
+      renderProducts();
       updateCart();
     };
   });
@@ -142,6 +142,7 @@ function attachProductEventListeners() {
           cart.splice(itemIdx, 1);
         }
       }
+      renderProducts();
       updateCart();
     };
   });
@@ -153,6 +154,7 @@ function attachCartEventListeners() {
     btn.onclick = (e) => {
       const name = e.currentTarget.dataset.name;
       cart = cart.filter(item => item.name !== name);
+      renderProducts();
       updateCart();
     };
   });
@@ -185,6 +187,7 @@ confirmOrderBtn.addEventListener('click', () => {
 startNewOrderBtn.addEventListener('click', () => {
   cart = [];
   modalBackdrop.classList.add('hidden');
+  renderProducts();
   updateCart();
 });
 
